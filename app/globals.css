@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 60% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 100% 33%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 174 100% 33%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 60% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 100% 33%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 174 100% 33%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+  h3 {
+    @apply text-xl md:text-2xl leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  .section-spacing {
+    @apply mb-16 md:mb-20;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-white py-3 px-6 rounded-md font-medium uppercase text-center transition-all duration-300 hover:bg-secondary/90 hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-secondary text-secondary py-3 px-6 rounded-md font-medium uppercase text-center transition-all duration-300 hover:bg-secondary hover:text-white hover:shadow-md;
+  }
+
+  .feature-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-border/50;
+  }
+
+  .feature-card:hover {
+    @apply transform -translate-y-1;
+  }
+
+  .pricing-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-border/50;
+  }
+
+  .pricing-card:hover {
+    @apply transform -translate-y-1;
+  }
+
+  .pricing-card.featured {
+    @apply border-2 border-secondary;
+  }
+
+  .testimonial-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm p-6 border border-border/50;
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
