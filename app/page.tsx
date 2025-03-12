@@ -73,7 +73,7 @@ export default function Home() {
 
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-white dark:bg-card rounded-xl shadow-xl overflow-hidden border border-border">
                   <Image
-                    src="/placeholder.svg?height=800&width=800"
+                    src="/dessert.jpg"
                     alt="Expert document reviewers analyzing documents"
                     fill
                     className="object-cover"
@@ -318,7 +318,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 animate-on-scroll">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/expert.jpg"
                 alt="Professional reviewing documents"
                 width={800}
                 height={600}
